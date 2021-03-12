@@ -1,0 +1,27 @@
+<div class="bg-img">
+  <div style="padding: 20px;">
+    <div class="center">
+      <h1 style="color: blue">Airport Management System</h1><br>
+      <h6>
+        <marquee>Welcome to Airport Application</marquee>
+      </h6>
+    </div>
+    <br />
+
+    <nav>
+      <div class="topnav">
+        <div class="button">
+          <div [hidden]="hidden">
+            <a routerLink="login" class="btn btn-primary active" role="button" routerLinkActive="active">Login</a>
+          </div>
+        </div>
+        <div class="button">
+          <div [hidden]="hidden">
+            <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Register</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>

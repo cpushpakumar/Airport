@@ -1,0 +1,23 @@
+
+
+<nav>
+    <div class="striped">
+    <a routerLink="addhangar" class="btn btn-primary active" role="button" routerLinkActive="active">Add
+        Hangar</a>
+    <a routerLink="addplane" class="btn btn-primary active" role="button" routerLinkActive="active">Add Plane</a>
+    <a routerLink="addpilot" class="btn btn-primary active" role="button" routerLinkActive="active">Add Pilot</a>
+    <a routerLink="viewhangar" class="btn btn-primary active" role="button" routerLinkActive="active">View
+        Hangar</a>
+    <a routerLink="viewplane" class="btn btn-primary active" role="button" routerLinkActive="active">View
+        Plane</a>
+    <a routerLink="viewpilot" class="btn btn-primary active" role="button" routerLinkActive="active">View
+        Pilot</a>
+    <a routerLink="permitmanager" class="btn btn-primary active" role="button" routerLinkActive="active">View
+            Manager</a>
+        </div>
+</nav>
+<div align="right">
+<span class="button is-small btn-info" (click)='logout()'>Logout</span>
+</div>
+
+<router-outlet></router-outlet>

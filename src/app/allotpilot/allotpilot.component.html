@@ -1,0 +1,38 @@
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Pilot Id</th>
+                <th>Pilot Name</th>
+                <th>Pilot Location</th>
+                <th>Plane Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pilot of pilots | async | paginate : { itemsPerPage : count , currentPage : p}">
+                <td>{{pilot.pilotId}}</td>
+                <td>{{pilot.pilotName}}</td>
+                <td>{{pilot.pilotLocation}}</td>
+
+                <td>
+                    <div *ngIf="pilot.planeId==0; else Allotted">
+                        <span class="button is-small btn-info" (click)='allotplane(pilot)'>Allot</span>
+                    </div>
+                    <ng-template #Allotted>
+                        Allotted
+                    </ng-template>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-right">
+        <pagination-controls (pageChange)="p =$event"></pagination-controls>
+    </div>
+</div>
+
+
+
+
+

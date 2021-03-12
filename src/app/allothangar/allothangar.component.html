@@ -1,0 +1,36 @@
+<p>allothangar works!</p>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Hangar Id</th>
+                <th>Hangar Location</th>
+                <th>Plane Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hangar of hangars | async | paginate : { itemsPerPage : count , currentPage : p}">
+                <td>{{hangar.hangarId}}</td>
+                <td>{{hangar.hangarLocation}}</td>
+
+                <td>
+                    <div *ngIf="hangar.planeId==0; else Allotted">
+                        <span class="button is-small btn-info" (click)='allotplane(hangar)'>Allot</span>
+                    </div>
+                    <ng-template #Allotted>
+                        Allotted
+                    </ng-template>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-right">
+        <pagination-controls (pageChange)="p =$event"></pagination-controls>
+    </div>
+</div>
+
+
+
+
